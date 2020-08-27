@@ -61,8 +61,7 @@ Hierarchical clustering is used here to reduce the feature set based on low redu
 
 <!--**[[IMRAN: Add a paragraph describing this plot in context (what is the 'accuracy' measure, what are the numbers, etc.)]]**-->
 
-<!-- TO DO -->
-| ![Alt text](avg_mouse_leave-out.png?raw=true "Title")
+| ![Alt text](avg_mouse_leave-out.png?raw=true "Leave-task")
 |:--:| 
 | The color represents the balanced accuracy on the left-out task using the reduced-set and the labelled number is the total number of features in the set. |
 
