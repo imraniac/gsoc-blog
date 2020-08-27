@@ -63,7 +63,7 @@ Hierarchical clustering is used here to reduce the feature set based on low redu
 
 | ![Alt text](avg_mouse_leave-out.png?raw=true "Leave-task")
 |:--:| 
-| The color represents the balanced accuracy on the left-out task using the reduced-set and the labelled number is the total number of features in the set. |
+| We applied different threshold (`ø`) values to restrict the number of features in the reduced-set. Here, the color represents the balanced accuracy on the left-out task using the reduced-set and the labelled number is the total number of features in the set. |
 
 
 ## Final reduced feature set
