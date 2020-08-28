@@ -13,7 +13,6 @@ But it is unknown which of these thousands of existing methods perform well on s
 In this task, we aimed to efficiently reduce an existing library of ~7700 time-series features (from the [*hctsa*](https://github.com/benfulcher/hctsa) package) to a reduced subset and implement the result as an open-source library.
 The resulting feature set should be highly computationally efficient relative to *hctsa*, give high performance on the set of training tasks (mouse fMRI manipulations), and eliminate the dependency on a Matlab licence, thereby enabling more widespread (and real-time) adoption of feature-based time-series analysis in medical and research applications.
 
-<!--**[[IMRAN: Add a couple sentences here about the broad strategy: i.e., that we're going to use a procedure based on [catch22](https://github.com/chlubba/catch22) to first find features that perform best across a range of tasks, then reduce the redundancy across this set to find maximally independent features, and finally code them into C, with wrappers for common coding environments like python.]]**-->
 
 In this project, we have used a similar workflow as presented in [*catch22*](https://github.com/chlubba/catch22), which selects the top features based on classification performance on the given set of tasks and performs the redundancy method to get the maximally independent features. The feature set was coded in C and also made wrappers for Matlab and Python programming languages.
 
@@ -59,7 +58,6 @@ Hierarchical clustering is used here to reduce the feature set based on low redu
   - In this method, we leave out one task from the dataset and run the redundancy pipeline on the rest of the tasks.
   - Once we have a reduced set of features, we evaluated its performance on the left-out task.
 
-<!--**[[IMRAN: Add a paragraph describing this plot in context (what is the 'accuracy' measure, what are the numbers, etc.)]]**-->
 
 | ![Alt text](avg_mouse_leave-out.png?raw=true "Leave-task")
 |:--:| 
@@ -101,7 +99,6 @@ The list of features selected (one from each cluster) is as follows:
 
 ### Performance Comparison
 
-<!--**[[IMRAN: The key test is whether the reduced set gives similar/better performance on the problems--please include some of these results?]]**-->
 
 It is evident from the scatter plot that the reduced feature set gives similar and in some cases better performance than the full *hctsa* feature set. Thus, in memory and time-constraint environments the *hctsa* can be replaced by *catchaMouse16*.
 
@@ -111,7 +108,6 @@ It is evident from the scatter plot that the reduced feature set gives similar a
 
 
 ### Speed Gains
-<!--**[[IMRAN: Add a description of what is plotted, and describe in words why it's relevant/interesting]]**-->
 
 We compared the average execution time to run the reduced feature set on 2000 time-series of length 900, from *hctsa* (in `Matlab`) and *catchaMouse16* library (in `C` and `Mex`). 
 Our developed library is ~60 times faster than *hctsa* as shown in the comparison plot:
@@ -120,7 +116,6 @@ Our developed library is ~60 times faster than *hctsa* as shown in the compariso
 
 
 ### Summary
-<!--**[[IMRAN: Add a summary of the final repository, with a link to the repo, and some reflections on why it was interesting and will likely to useful]]**-->
 
 The [*catchaMouse16*](https://github.com/NeuralSystemsAndSignals/catchaMouse16) library consists of 16 *hctsa* features efficiently coded in C, which was selected by following the [*op_importance*](https://github.com/imraniac/op_importance) feature reduction pipeline. 
 - It is easily integrable in large-scale projects with options to choose from programming languages like Python and Matlab. 
@@ -128,7 +123,6 @@ The [*catchaMouse16*](https://github.com/NeuralSystemsAndSignals/catchaMouse16) 
 
 ## Future Roadmap
 
-<!--**[[IMRAN: Remove, or replace with proper detail that a reader could understand:]]**-->
 Even after the end of the GSoC period, I would continue contributing to open-source development for the neuroscience community.
 
 - I plan to publish a scientific paper describing the novelty in our method
